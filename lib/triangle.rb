@@ -24,18 +24,15 @@ class Triangle
   end   
   
   class TriangleError < StandardError
-    def self.message
-    "Your case violates one of the inequality rules for Triangles."
-    end 
   end
   
   
   def kind 
     case  
     when self.is_triangle? == false 
-      raise TriangleError.message
+      raise TriangleError
     when self.triangle_inequality?
-      raise TriangleError.message
+      raise TriangleError
     when self.sides.uniq.length == 1
       :equilateral
     when self.sides.uniq.length == self.sides.length 
