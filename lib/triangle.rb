@@ -32,7 +32,11 @@ class Triangle
   def kind 
     case  
     when self.is_triangle? == false 
+      begin
       raise TriangleError
+       rescue TriangleError => error
+           puts error.message
+       end
     when self.triangle_inequality?
       raise TriangleError
     when self.sides.uniq.length == 1
