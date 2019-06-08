@@ -29,13 +29,6 @@ class Triangle
     end 
   end
   
-  def throw_error
-    begin
-    raise TriangleError
-    rescue TriangleError => error
-    puts error.message
-    end
-  end 
   
   def kind 
     case  
