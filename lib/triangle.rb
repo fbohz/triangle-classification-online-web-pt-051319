@@ -29,16 +29,20 @@ class Triangle
     end 
   end
   
+  def throw_error
+    begin
+    raise TriangleError
+    rescue TriangleError => error
+    puts error.message
+    end
+  end 
+  
   def kind 
     case  
     when self.is_triangle? == false 
-      begin
-      raise TriangleError
-       rescue TriangleError => error
-           puts error.message
-       end
+      throw_error
     when self.triangle_inequality?
-      raise TriangleError
+      throw_error
     when self.sides.uniq.length == 1
       :equilateral
     when self.sides.uniq.length == self.sides.length 
