@@ -40,9 +40,9 @@ class Triangle
   def kind 
     case  
     when self.is_triangle? == false 
-      throw_error
+      self.throw_error
     when self.triangle_inequality?
-      throw_error
+      self.throw_error
     when self.sides.uniq.length == 1
       :equilateral
     when self.sides.uniq.length == self.sides.length 
